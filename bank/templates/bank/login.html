@@ -2,22 +2,34 @@
 {% extends 'bank/base.html' %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2>Login</h2>
-        <form method="POST">
+<div class="flex justify-center h-screen bg-gray-100">
+    <div class="w-full max-w-md p-6 bg-white rounded-md shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Login</h2>
+        <form method="POST" class="space-y-4">
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" name="username" id="username" class="form-control" required>
+            <div class="relative">
+                <label for="username" class="text-sm font-medium text-gray-700">Username:</label>
+                <input type="text" name="username" id="username" class="w-full p-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </span>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
-                <input type="password" name="password" id="password" class="form-control" required>
+            <div class="relative">
+                <label for="password" class="text-sm font-medium text-gray-700">Password:</label>
+                <input type="password" name="password" id="password" class="w-full p-2 pl-10 text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h4m6 0h4m-6-4h4m6 0h4m-6-4h4m6 0h4m-6-4h4" />
+                    </svg>
+                </span>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="w-full p-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-md">Login</button>
         </form>
-        <p class="mt-3">Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+        <p class="mt-4 text-sm text-gray-600">
+            Don't have an account? <a href="{% url 'register' %}" class="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out">Register here</a>.
+        </p>
     </div>
 </div>
 {% endblock %}

@@ -2,13 +2,13 @@
 {% extends 'bank/base.html' %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2>Deposit Money</h2>
-        <form method="POST">
+<div class="flex justify-center items-center h-screen">
+    <div class="max-w-md w-full mx-auto bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-3xl font-bold text-center mb-4">Deposit Money</h2>
+        <form method="POST" class="space-y-4">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-success">Deposit</button>
+            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out">Deposit</button>
         </form>
     </div>
 </div>
